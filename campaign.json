@@ -1,24 +1,34 @@
 {
-    "campaigns": [
-        {
-            "id":1,
-            "name": "Name Campaign",
-            "keywords": "name",
-            "bid": 20,
-            "fund": 30,
-            "status": "on",
-            "town": "Krakow",
-            "radius": "100km"
-        },
-        {
-            "id":1,
-            "name": "Name Campaign",
-            "keywords": "name",
-            "bid": 20,
-            "fund": 30,
-            "status": "on",
-            "town": "Krakow",
-            "radius": "100km"
-        }
-    ]
+  "campaigns": [
+    {
+      "id": 1,
+      "name": "Name Campaign",
+      "keywords": "name",
+      "bid": 20,
+      "fund": 30,
+      "status": "on",
+      "town": "Krakow",
+      "radius": "100km"
+    },
+    {
+      "id": 2,
+      "name": "Name Campaign",
+      "keywords": "name",
+      "bid": 20,
+      "fund": 30,
+      "status": "on",
+      "town": "Krakow",
+      "radius": "100km"
+    },
+    {
+      "id": 3,
+      "name": "Name Campaign",
+      "keywords": "name",
+      "bid": 20,
+      "fund": 30,
+      "status": "on",
+      "town": "Krakow",
+      "radius": "100km"
+    }
+  ]
 }

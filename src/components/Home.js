@@ -7,13 +7,27 @@ const API = "http://localhost:3001/campaigns";
 function Home () {
 
     const [campaign, setCampaign] = useState([]);
+    const [refresh, setRefresh] = useState(Math.random())
 
-    useEffect(() => {
+    const handleRead = () => {
         fetch(`${API}`)
         .then((response) => response.json())
         .then((data) => setCampaign(data)) 
-    }, [])
+    }
 
+    const handleDelete = (id) => {
+        fetch(`${API}/${id}`, {
+            method: "DELETE",
+        })
+        .then((response) => response.json())
+        .then(() => setRefresh(Math.random()))
+    }
+
+    useEffect(() => {
+        handleRead();
+    }, [refresh])
+
+ 
     return (
         <main>
             <h1>Campaigns</h1>
@@ -32,16 +46,16 @@ function Home () {
                 <tbody>
                     {campaign.map((item) => (
                         <tr>
-                            <td>{item.name}</td>
-                            <td>{item.keywords}</td>
-                            <td>{item.bid}</td>
-                            <td>{item.fund}</td>
-                            <td>{item.status}</td>
-                            <td>{item.town}</td>
-                            <td>{item.radius}</td>
+                            <td key={item.id}>{item.name}</td>
+                            <td key={item.id}>{item.keywords}</td>
+                            <td key={item.id}>{item.bid}</td>
+                            <td key={item.id}>{item.fund}</td>
+                            <td key={item.id}>{item.status}</td>
+                            <td key={item.id}>{item.town}</td>
+                            <td key={item.id}>{item.radius}</td>
                             <td>
                                 <button>Edit</button>
-                                <button>Delete</button>
+                                <button onClick={()=> handleDelete(item.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}
