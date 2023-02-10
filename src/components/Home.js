@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Home.css';
 import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 const API = "http://localhost:3001/campaigns";
 
@@ -61,7 +62,10 @@ function Home () {
                     ))}
                 </tbody>
             </table>
-            <button>Add Campaign</button>
+            <Link to='/add'>
+                <button>Add Campaign</button>
+            </Link>
+
         </main>
     )
 }
