@@ -46,14 +46,14 @@ function Home () {
                 </thead>
                 <tbody>
                     {campaign.map((item) => (
-                        <tr>
-                            <td key={item.id}>{item.name}</td>
-                            <td key={item.id}>{item.keywords}</td>
-                            <td key={item.id}>{item.bid}</td>
-                            <td key={item.id}>{item.fund}</td>
-                            <td key={item.id}>{item.status}</td>
-                            <td key={item.id}>{item.town}</td>
-                            <td key={item.id}>{item.radius}</td>
+                        <tr key={item.id}>
+                            <td>{item.name}</td>
+                            <td>{item.keywords}</td>
+                            <td>{item.bid}</td>
+                            <td>{item.fund}</td>
+                            <td>{item.status}</td>
+                            <td>{item.town}</td>
+                            <td>{item.radius}</td>
                             <td>
                                 <button>Edit</button>
                                 <button onClick={()=> handleDelete(item.id)}>Delete</button>
