@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Add.css';
 import {useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 const API = "http://localhost:3001/campaigns";
 
 function Add () {
@@ -13,6 +14,7 @@ function Add () {
     // const [status, setStatus] = useState();
     // const [town, setTown] = useState("");
     // const [radius, setRadius] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,13 +28,15 @@ function Add () {
                 id: id,
                 name: name
             })
+            }).then((res) => {
+                navigate('/');
         })
     }
 
 
     return(
         
-        <form>
+        <form onSubmit={handleSubmit} >
             <label>Campaign name</label>
             <input type="text" required value = {name} onChange = {(e) => setName(e.target.value)}/>
             <label>Keywords</label>
@@ -56,7 +60,12 @@ function Add () {
             </select>
             <label>Radius</label>
             <input type="number" />
-            <button onClick={handleSubmit} type="submit" >Submit</button> 
+
+            <button type="submit">Submit</button> 
+
+            <Link to='/'>
+            <button >Back</button> 
+            </Link>
         </form>
                 
               
