@@ -61,7 +61,9 @@ function Home () {
                             <td>{item.town}</td>
                             <td>{item.radius}</td>
                             <td>
+                                <Link to="/edit">
                                 <button>Edit</button>
+                                </Link>
                                 <button onClick={()=> handleDelete(item.id)}>Delete</button>
                             </td>
                         </tr>

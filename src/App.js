@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import {BrowserRouter as Router, Routes, Route, Switch, Link} from 'react-router-dom';
 import Add from './components/Add';
+import Edit from './components/Edit';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/add' element={<Add />}></Route>
+          <Route path='/edit' element={<Edit />}></Route>
         </Routes>
       </Router>
     </div>
