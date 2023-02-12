@@ -8,12 +8,12 @@ function Add () {
 
     const [id, setID] = useState(Math.random());
     const [name, setName] = useState("");
-    // const [keywaord, setKeyword] = useState("");
-    // const [bid, setBid] = useState();
-    // const [fund, setFund] = useState("");
-    // const [status, setStatus] = useState();
-    // const [town, setTown] = useState("");
-    // const [radius, setRadius] = useState("");
+    const [keywords, setKeywords] = useState("");
+    const [bid, setBid] = useState();
+    const [fund, setFund] = useState("");
+    const [status, setStatus] = useState();
+    const [town, setTown] = useState("");
+    const [radius, setRadius] = useState();
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -26,7 +26,13 @@ function Add () {
             method: "POST",
             body: JSON.stringify({
                 id: id,
-                name: name
+                name: name,
+                keywords: keywords,
+                bid: bid,
+                fund: fund,
+                status: status,
+                town: town,
+                radius: radius
             })
             }).then((res) => {
                 navigate('/');
@@ -35,40 +41,43 @@ function Add () {
 
 
     return(
-        
+        <div className="add-campaign">
+        <h1>Add Campaign</h1>
         <form onSubmit={handleSubmit} >
             <label>Campaign name</label>
             <input type="text" required value = {name} onChange = {(e) => setName(e.target.value)}/>
             <label>Keywords</label>
-            <input type="text" />
+            <input type="text" required value = {keywords} onChange = {(e) => setKeywords(e.target.value)}/>
             <label>Bid amount</label>
-            <input type="number" />
+            <input type="number" required value = {bid} onChange = {(e) => setBid(e.target.value)}/>
             <label>Campaign found</label>
-            <input type="text" />
-            <label>Status
-            <input type="radio" id="radioYes" />
-            <label for="range">Yes</label>
-            <input type="radio" id="radioNo" />
-            <label for="range">No</label>
-            </label>
+            <input type="text" required value = {fund} onChange = {(e) => setFund(e.target.value)}/>
+            <fieldset required value={status}  onChange = {(e) => setStatus(e.target.value)}>
+                <legend>Status</legend>
+                <input type="radio" id="on"></input>
+                <label for="on">On</label>
+                <input type="radio" id="off"></input>
+                <label for="off">Off</label>
+            </fieldset>
             <label>Town</label>
-            <select>
+            <select required value = {town} onChange = {(e) => setTown(e.target.value)}>
                 <option value="">--Please choose town--</option>
                 <option value="Krakow">Krakow</option>
                 <option value="Gdansk">Gdansk</option>
                 <option value="Warszawa">Warszawa</option>
+                <option value="Wroclaw">Wroclaw</option>
+                <option value="Poznan">Poznan</option>
             </select>
-            <label>Radius</label>
-            <input type="number" />
-
-            <button type="submit">Submit</button> 
-
-            <Link to='/'>
-            <button >Back</button> 
-            </Link>
+            <label>Radius in km</label>
+            <input type="number" required value = {radius} onChange = {(e) => setRadius(e.target.value)}/>
+            <div className="form-buttons">
+                <button type="submit">Submit</button> 
+                <Link to='/'>
+                    <button >Back</button> 
+                </Link>
+            </div>
         </form>
-                
-              
+        </div>
     )
 }
 export default Add;
