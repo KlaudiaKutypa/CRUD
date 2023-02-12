@@ -32,9 +32,11 @@ function Home () {
     return (
         <main>
             <h1>ChocoLaTe Company Campaigns</h1>
+            <div className="button-add">
             <Link to='/add'>
                 <button>Add Campaign</button>
             </Link>
+            </div>
             <table>
                 <thead>
                     <tr>
