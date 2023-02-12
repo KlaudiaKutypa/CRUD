@@ -31,7 +31,10 @@ function Home () {
  
     return (
         <main>
-            <h1>Campaigns</h1>
+            <h1>ChocoLaTe Company Campaigns</h1>
+            <Link to='/add'>
+                <button>Add Campaign</button>
+            </Link>
             <table>
                 <thead>
                     <tr>
@@ -42,6 +45,7 @@ function Home () {
                         <th>Status</th>
                         <th>Town</th>
                         <th>Radius</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,10 +66,6 @@ function Home () {
                     ))}
                 </tbody>
             </table>
-            <Link to='/add'>
-                <button>Add Campaign</button>
-            </Link>
-
         </main>
     )
 }

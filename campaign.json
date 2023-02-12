@@ -2,8 +2,8 @@
   "campaigns": [
     {
       "id": 1,
-      "name": "Name Campaign",
-      "keywords": "name",
+      "name": "Milky chocolate",
+      "keywords": "milky",
       "bid": 20,
       "fund": 30,
       "status": "on",
@@ -12,22 +12,42 @@
     },
     {
       "id": 2,
-      "name": "Name Campaign",
-      "keywords": "name",
-      "bid": 20,
-      "fund": 30,
-      "status": "on",
-      "town": "Krakow",
-      "radius": "100"
+      "name": "Cherry chocolate",
+      "keywords": "cherry",
+      "bid": 50,
+      "fund": 10,
+      "status": "off",
+      "town": "Warszawa",
+      "radius": "50"
     },
     {
       "id": 3,
-      "name": "Name Campaign",
-      "keywords": "name",
+      "name": "Banana chocolate",
+      "keywords": "banana",
       "bid": 20,
       "fund": 30,
       "status": "on",
-      "town": "Krakow",
+      "town": "Poznan",
+      "radius": "60"
+    },
+    {
+      "id": 4,
+      "name": "Oreo chocolate",
+      "keywords": "oreo",
+      "bid": 20,
+      "fund": 30,
+      "status": "on",
+      "town": "Poznan",
+      "radius": "60"
+    },
+    {
+      "id": 5,
+      "name": "Milky chocolate",
+      "keywords": "milky",
+      "bid": 20,
+      "fund": 30,
+      "status": "on",
+      "town": "Gdansk",
       "radius": "100"
     }
   ]
