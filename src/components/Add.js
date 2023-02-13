@@ -42,7 +42,9 @@ function Add () {
 
     return(
         <div className="add-campaign">
+        <div className="header">
         <h1>Add Campaign</h1>
+        </div>
         <form onSubmit={handleSubmit} >
             <label>Campaign name</label>
             <input type="text" required value = {name} onChange = {(e) => setName(e.target.value)}/>
@@ -71,13 +73,14 @@ function Add () {
             <label>Radius in km</label>
             <input type="number" required value = {radius} onChange = {(e) => setRadius(e.target.value)}/>
             <div className="form-buttons">
-                <button type="submit">Submit</button> 
+                <button className="btn-submit" type="submit">Submit</button> 
                 <Link to='/'>
-                    <button >Back</button> 
+                    <button className="btn-back" >Back</button> 
                 </Link>
             </div>
         </form>
         </div>
     )
 }
+
 export default Add;

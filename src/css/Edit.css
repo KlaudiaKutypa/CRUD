@@ -5,9 +5,69 @@
     flex-direction: column;
  }
 
- form{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+ .header {
+   width: 100%;
+   color: white;
+   font-weight: 800;
+   background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa5WcopXxKg9maHKXj7gBtPSkL4M4m6Hu2-z_mLkR7c1Sho6BSKxw4BkdQ6Y23I5SYPz8&usqp=CAU);
+   text-align: center;
+   background-size: cover;
+}
+
+form{
+ display: flex;
+ flex-direction: column;
+ margin-top: 2rem;
+ width: 50%;
+ border: solid 0.2rem black;
+ padding: 1rem;
+
+}
+
+input {
+padding: 0.2rem;
+height: 1.2rem;
+}
+
+select {
+padding: 0.2rem;
+height: 1.8rem;
+}
+
+
+label {
+margin-bottom: 0.3rem;
+margin-top: 0.3rem;
+}
+
+
+button {
+margin: 0.2rem;
+padding: 0.6rem;
+border: none;
+border-radius: 10%;
+color: white;
+text-align: center;
+}
+
+button:hover {
+transform: scale(1.2);
+}
+
+.btn-update{
+margin-top: 2rem;
+background-color:green;
+}
+
+.btn-back{
+margin-top: 2rem;
+background-color:grey;
+}
+
+@media (max-width: 425px) {
+ button {
+     font-size:  0.9rem;
  }
+}
+
 

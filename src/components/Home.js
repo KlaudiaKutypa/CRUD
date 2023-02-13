@@ -36,10 +36,12 @@ function Home () {
  
     return (
         <main>
+            <div className="header">
             <h1>ChocoLaTe Company Campaigns</h1>
-            <div className="button-add">
+            </div>
+            <div className="button-add-container">
             <Link to='/add'>
-                <button>Add Campaign</button>
+                <button className="btn-add">Add Campaign</button>
             </Link>
             </div>
             <table>
@@ -66,8 +68,8 @@ function Home () {
                             <td>{item.town}</td>
                             <td>{item.radius}</td>
                             <td>
-                                <button onClick={()=> handleEdit(item.id)}>Edit</button>
-                                <button onClick={()=> handleDelete(item.id)}>Delete</button>
+                                <button className="btn-edit" onClick={()=> handleEdit(item.id)}>Edit</button>
+                                <button className="btn-delete" onClick={()=> handleDelete(item.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}

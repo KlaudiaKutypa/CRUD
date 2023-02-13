@@ -19,7 +19,7 @@ function Edit () {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:3001/campaigns/"+ campid)
+        fetch(`${API}`+ campid)
         .then((response) => response.json())
         .then((data) => {
             setName(data.name);
@@ -32,9 +32,9 @@ function Edit () {
         }) 
     },[])
 
-    const handleSubmit = (e) => {
+    const handleUpdate = (e) => {
         e.preventDefault();
-        fetch(("http://localhost:3001/campaigns/"+ campid), {
+        fetch((`${API}`+ campid), {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -55,13 +55,12 @@ function Edit () {
     }
 
 
- 
-
-
     return(
         <div className="edit-campaign">
+        <div className="header">
         <h1>Edit Campaign</h1>
-        <form onSubmit={handleSubmit} >
+        </div>
+        <form onSubmit={handleUpdate} >
             <label>Campaign name</label>
             <input type="text" required value = {name} onChange = {(e) => setName(e.target.value)}/>
             <label>Keywords</label>
@@ -89,13 +88,14 @@ function Edit () {
             <label>Radius in km</label>
             <input type="number" required value = {radius} onChange = {(e) => setRadius(e.target.value)}/>
             <div className="form-buttons">
-                <button type="submit">Update</button> 
+                <button className="btn-update" type="submit">Update</button> 
                 <Link to='/'>
-                    <button >Back</button> 
+                    <button className="btn-back">Back</button> 
                 </Link>
             </div>
         </form>
         </div>
     )
 }
+
 export default Edit;

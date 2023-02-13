@@ -6,20 +6,63 @@ main {
     flex-direction: column;
 }
 
-@media (max-width: 425px) {
-    main, button {
-        font-size: 0.4rem;
-    }
+.header {
+    width: 100%;
+    color: white;
+    font-weight: 800;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa5WcopXxKg9maHKXj7gBtPSkL4M4m6Hu2-z_mLkR7c1Sho6BSKxw4BkdQ6Y23I5SYPz8&usqp=CAU);
+    text-align: center;
+    background-size: cover;
 }
 
-.button-add {
+.button-add-container {
     width: 70%;
+}
+
+button {
+    margin: 0.2rem;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 10%;
+    color: white;
+    text-align: center;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.btn-add{
+    margin-top: 2rem;
+    background-color:green;
+}
+
+.btn-edit{
+    background-color:blue;
+}
+
+.btn-delete{
+    background-color:red;
 }
 
 table {
     width: 70%;
+    border-radius: 2%;
+    margin-top: 1.5rem;
 }
 
 tr {
     text-align: center;
+}
+
+th {
+    border-bottom: solid 0.2rem black;
+}
+
+/* MEDIA */
+
+@media (max-width: 425px) {
+    main, .btn-add, .btn-delete, .btn-edit {
+        font-size: 0.4rem;
+    }
 }
