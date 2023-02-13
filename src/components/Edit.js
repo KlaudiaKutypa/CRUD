@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Edit.css';
 import {useState, useEffect} from 'react';
 import {Link, useParams, useNavigate} from 'react-router-dom';
-const API = "https://my-json-server.typicode.com/KlaudiaKutypa/crud/campaigns/";
+const API = "https://my-json-server.typicode.com/KlaudiaKutypa/CRUD/campaigns/";
 
 function Edit () {
 
