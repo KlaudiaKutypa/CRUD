@@ -1,14 +1,14 @@
 {
   "campaigns": [
     {
-      "id": 1,
       "name": "Milky chocolate",
       "keywords": "milky",
       "bid": 20,
       "fund": 30,
       "status": "on",
       "town": "Krakow",
-      "radius": "100"
+      "radius": "100",
+      "id": 1
     },
     {
       "id": 2,

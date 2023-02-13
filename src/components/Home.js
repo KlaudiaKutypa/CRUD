@@ -1,14 +1,15 @@
 import React from 'react';
 import '../css/Home.css';
 import {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const API = "http://localhost:3001/campaigns";
 
 function Home () {
 
     const [campaign, setCampaign] = useState([]);
-    const [refresh, setRefresh] = useState(Math.random())
+    const [refresh, setRefresh] = useState(Math.random());
+    const navigate = useNavigate();
 
     const handleRead = () => {
         fetch(`${API}`)
@@ -22,6 +23,10 @@ function Home () {
         })
         .then((response) => response.json())
         .then(() => setRefresh(Math.random()))
+    }
+
+    const handleEdit = (id) => {
+        navigate("/edit/" + id)
     }
 
     useEffect(() => {
@@ -61,9 +66,7 @@ function Home () {
                             <td>{item.town}</td>
                             <td>{item.radius}</td>
                             <td>
-                                <Link to="/edit">
-                                <button>Edit</button>
-                                </Link>
+                                <button onClick={()=> handleEdit(item.id)}>Edit</button>
                                 <button onClick={()=> handleDelete(item.id)}>Delete</button>
                             </td>
                         </tr>
