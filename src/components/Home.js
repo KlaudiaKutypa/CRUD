@@ -3,7 +3,7 @@ import '../css/Home.css';
 import {useState, useEffect} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
-const API = "http://localhost:3001/campaigns";
+const API = "https://my-json-server.typicode.com/KlaudiaKutypa/crud/campaigns/";
 
 function Home () {
 
